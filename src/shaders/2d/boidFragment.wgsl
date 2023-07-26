@@ -10,5 +10,5 @@ fn main(input : FragmentInputs) -> FragmentOutputs {
     if(uniforms.avoidMouse > 0) {
         d = distance(input.wPos, uniforms.mousePos) / uniforms.zoom;
     }
-    fragmentOutputs.color = vec4(1, d, d, 1.0);
+    fragmentOutputs.color = vec4(1, d, d, 1.0); // *** Can change boid color here
 }
