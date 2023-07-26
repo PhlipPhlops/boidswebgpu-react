@@ -5,6 +5,7 @@ import { UniformBuffer } from "@babylonjs/core/Materials/uniformBuffer";
 import { Mesh } from "@babylonjs/core/Meshes/mesh";
 import { ShaderMaterial } from "@babylonjs/core/Materials/shaderMaterial";
 import { Vector2, Vector3 } from "@babylonjs/core/Maths/math.vector";
+import { Color4 } from "@babylonjs/core/Maths/math.color";
 import { Scene } from "@babylonjs/core/scene";
 import { StorageBuffer } from "@babylonjs/core/Buffers/storageBuffer";
 import { setupIncludes } from "./shaders";
@@ -99,6 +100,7 @@ export const boids2d = async () => {
   const setup = () => {
     boidText.innerHTML = `Boids: ${numBoids}`;
     scene = new Scene(engine);
+    scene.clearColor = new Color4(0, 0, 0, 0); // Transparency
     camera = new FreeCamera("camera1", new Vector3(0, 0, -5), scene);
     camera.mode = 1;
     aspectRatio = engine.getRenderWidth() / engine.getRenderHeight();
